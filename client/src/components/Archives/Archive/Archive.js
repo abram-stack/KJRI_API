@@ -10,7 +10,7 @@ const Archive = () => {
       <Card className= 'my-3 p-3 rounded'> 
        <Link to={`/api/archives/`}>
          <Card.Title as='div'>
-           <strong>archivetitle</strong>  
+           <strong>title</strong>  
          </Card.Title>
        </Link>
      </Card>

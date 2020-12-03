@@ -5,9 +5,11 @@ import * as api from '../api';
 // action creators
 export const getArchives = () => async(dispatch) => {
   try {
+    dispatch({type: 'ARCHIVE_LIST_REQUEST'})
+
     const { data } = await api.fetchArchives();
 
-    dispatch({type: 'FETCH_ALL', payload: data});
+    dispatch({type: 'ARCHIVE_LIST_SUCCESS', payload: data});
   } catch (err) {
     console.log(err.message);
   }

@@ -7,17 +7,22 @@ import {useSelector } from 'react-redux'
 
 const Archives = () => {
   
-  const archives = useSelector( (state) => state.archives);
-
+  // const archives = useSelector( (state) => state.archives);
+  // console.log(archives);
+  const archives = [];
   // const classes = useStyles();
-  console.log(archives);
+   
   return (
     <>
-      <Archive/>
-      <Archive/>
-      <Archive/>
+      {archives.map(archive => (
+        <Archive archive ={archive}/>
+      ))}
+      
     </>
   )
 }
 
 export default Archives
+// {/* {archives.map(archive => (
+//       <Archive archive={archive}/>
+//     ))} */}

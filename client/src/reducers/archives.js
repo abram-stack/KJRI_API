@@ -1,8 +1,10 @@
 export default(archives =[] , action ) =>{
 
   switch (action.type) {
-    case 'FETCH_ALL':
-      return archives;
+    case 'ARCHIVE_LIST_REQUEST':
+      return {loading: true, archives: []};
+    case 'ARCHIVE_LIST_SUCCESS':
+      return {loading: false, archives: action.payload};
     case 'CREATE':
       return archives;
     default:
