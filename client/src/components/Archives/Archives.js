@@ -7,9 +7,11 @@ import {useSelector } from 'react-redux'
 
 const Archives = () => {
   
-  // const archives = useSelector( (state) => state.archives);
-  // console.log(archives);
-  const archives = [];
+  const archiveList = useSelector( (state) => state.archives);
+  const { loading, archives } = archiveList
+  console.log(archives);
+
+  // const archives = [];
   // const classes = useStyles();
    
   return (
