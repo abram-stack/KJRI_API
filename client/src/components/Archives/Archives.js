@@ -8,18 +8,16 @@ import {useSelector } from 'react-redux'
 const Archives = () => {
   
   const archiveList = useSelector( (state) => state.archives);
-  const { loading, archives } = archiveList
-  console.log(archives);
+  const { loading, error, archives } = archiveList
+  console.log(error, loading, archives);
 
-  // const archives = [];
-  // const classes = useStyles();
    
   return (
     <>
-      {archives.map(archive => (
-        <Archive archive ={archive}/>
-      ))}
-      
+      <h1>Archive LIST</h1>
+       {archives.map((archive) => (
+        <Archive key={archive._id} archive ={archive}/>
+      ))} 
     </>
   )
 }

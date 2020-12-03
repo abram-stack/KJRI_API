@@ -3,14 +3,14 @@ import { Card } from 'react-bootstrap'
 import { Link } from 'react-router-dom'
 import useStyles from '../../../style'
 
-const Archive = () => {
+const Archive = ({archive}) => {
   const classes = useStyles();
   return (
     <>
       <Card className= 'my-3 p-3 rounded'> 
        <Link to={`/api/archives/`}>
          <Card.Title as='div'>
-           <strong>title</strong>  
+          <strong>{archive.name}</strong>  
          </Card.Title>
        </Link>
      </Card>
