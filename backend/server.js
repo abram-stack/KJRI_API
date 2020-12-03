@@ -4,7 +4,7 @@ const morgan = require('morgan')
 const colors = require('colors')
 const bodyParser = require('body-parser')
 const cookieParser = require('cookie-parser')
-
+const cors = require('cors')
 const logger = require('./middleware/logger')
 const errorHandler = require('./middleware/errorHandler')
 
@@ -27,7 +27,7 @@ const authRoute = require('./routes/auth');
 const usersRoute = require('./routes/users');
 
 const app = express();
-
+app.use(cors());
 // MIDDLEWARE
 app.use(bodyParser.json());
 
