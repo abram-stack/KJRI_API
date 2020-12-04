@@ -7,7 +7,8 @@ const User = require('../models/User')
 // @route GET /api/auth/users
 // @access private/admin
 exports.getUsers = asyncHandler(async (req, res, next)=>{
-  res.status(200).json(res.advancedResults);
+  const users = await User.find();
+  res.status(200).json(users);
 });
 
 // @desc Get single users
@@ -16,7 +17,7 @@ exports.getUsers = asyncHandler(async (req, res, next)=>{
 exports.getUser = asyncHandler(async (req, res, next)=>{
   const user = await User.findById(req.params.id);
 
-  res.status(200).json({success: true, data: user});
+  res.status(200).json(user);
 });
 
 // @desc create user

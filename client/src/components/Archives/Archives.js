@@ -14,7 +14,7 @@ const Archives = () => {
    
   return (
     <>
-      <h1>Archive LIST</h1>
+    {/* if error show error from backend  else display*/}
        {archives.map((archive) => (
         <Archive key={archive._id} archive ={archive}/>
       ))} 

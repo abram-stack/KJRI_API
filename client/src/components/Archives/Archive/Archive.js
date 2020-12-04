@@ -8,7 +8,7 @@ const Archive = ({archive}) => {
   return (
     <>
       <Card className= 'my-3 p-3 rounded'> 
-       <Link to={`/api/archives/`}>
+       <Link to={`/api/archives/${archive._id}`}>
          <Card.Title as='div'>
           <strong>{archive.name}</strong>  
          </Card.Title>
