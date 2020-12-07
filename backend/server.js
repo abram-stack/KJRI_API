@@ -48,7 +48,6 @@ if(process.env.NODE_ENV === 'development'){
 // });
 // ================ USERS
 
-// ARCHIVES
 app.use('/api/archives', archivesRoute);
 // ============== ARCHIVES
 app.use('/api/auth',authRoute);
