@@ -7,7 +7,7 @@ const {
   deleteArchive} = require('../controllers/archives');
 const router = express.Router();
 
-const { protect, authorize } = require('../middleware/auth')
+const { protect, authorize } = require('../middleware/auth');
 
 router
   .route('/')

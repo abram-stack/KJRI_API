@@ -25,6 +25,8 @@ connectDB();
 const archivesRoute = require('./routes/archives');
 const authRoute = require('./routes/auth');
 const usersRoute = require('./routes/users');
+const regularRoute = require('./routes/regulars');
+const reportRoute = require('./routes/reports');
 
 const app = express();
 app.use(cors());
@@ -49,9 +51,10 @@ if(process.env.NODE_ENV === 'development'){
 // ================ USERS
 
 app.use('/api/archives', archivesRoute);
-// ============== ARCHIVES
 app.use('/api/auth',authRoute);
 app.use('/api/users',usersRoute);
+app.use('/api/regulars',regularRoute);
+app.use('/api/reports', reportRoute);
 
 app.use(errorHandler);
 app.use(cookieParser);

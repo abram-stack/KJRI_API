@@ -21,7 +21,7 @@ exports.getArchive =asyncHandler(async(req, res, next) => {
         if(!archive){
             next(new ErrorResponse(`Archive not found with id ${req.params.id}`, 404));
         }
-        res.status(200).json({ data: archive});
+        res.status(200).json(archive);
 });
 
 // @desc Post newarchive
