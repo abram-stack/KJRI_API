@@ -44,7 +44,7 @@ exports.updateRegular = asyncHandler(async( req, res, next) => {
   });
 
   if(!regular){
-    next ( new ErrorHandler(`Regular mail with id ${req.params.id} not found`), 404);
+    next ( new ErrorHandler(`Regular mail with id ${req.params.id} not found`, 404));
   }
 
   res.status(200).json(regular);
@@ -54,9 +54,9 @@ exports.updateRegular = asyncHandler(async( req, res, next) => {
 // route DELETE /api/regular/:id
 // private only register user 
 exports.deleteRegular = asyncHandler(async( req, res, next) => {
-  const regular = await Regular.findOneAndDelete(req.params.id);
+  const regular = await Regular.findByIdAndDelete(req.params.id);
   if(!regular){
-    next(new ErrorHandler(`Regular mail with id ${req.params.id} not found`), 404);
+    next(new ErrorHandler(`Regular mail with id ${req.params.id} not found`, 404));
   }
   res.status(200).json(regular);
 });

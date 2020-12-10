@@ -28,6 +28,7 @@ const usersRoute = require('./routes/users');
 const regularRoute = require('./routes/regulars');
 const reportRoute = require('./routes/reports');
 const coverRoute = require('./routes/covers');
+const statementRoute = require('./routes/statements');
 
 const app = express();
 app.use(cors());
@@ -57,6 +58,7 @@ app.use('/api/users',usersRoute);
 app.use('/api/regulars',regularRoute);
 app.use('/api/reports', reportRoute);
 app.use('/api/covers', coverRoute);
+app.use('/api/statements', statementRoute);
 
 app.use(errorHandler);
 app.use(cookieParser);

@@ -17,7 +17,7 @@ exports.getCovers = asyncHandler( async (req, res, next) => {
 exports.getCover = asyncHandler( async( req, res, next) => {
   const cover = await Cover.findById(req.params.id);
   if(!cover){
-    return next(new errorResponse(`Cover mail with id ${req.params.id} not found`), 404);
+    return next(new errorResponse(`Cover mail with id ${req.params.id} not found`, 404));
   }
   res.status(200).json(cover);
 });
@@ -44,7 +44,7 @@ exports.updateCover = asyncHandler( async( req, res, next) => {
   }); 
 
   if(!cover){
-    return next(new errorResponse(`Cover mail with id ${req.params.id} not found`), 404);
+    return next(new errorResponse(`Cover mail with id ${req.params.id} not found`,404));
   }
   res.status(200).json(cover);
 });
@@ -57,7 +57,7 @@ exports.deleteCover = asyncHandler( async( req, res, next) => {
   const cover = await Cover.findByIdAndDelete(req.params.id);
 
   if(!cover){
-    return next(new errorResponse(`Cover mail with id ${req.params.id} not found`), 404);
+    return next(new errorResponse(`Cover mail with id ${req.params.id} not found`, 404));
   }
 
   res.status(200).json({data: {} });
