@@ -1,6 +1,6 @@
 const Cover = require('../models/Cover')
 const asyncHandler = require('../middleware/async')
-const errorHandler = require('../util/errorResponse');
+const errorResponse = require('../util/errorResponse');
 
 // @desc Get All the cover mails from database
 // route GET/api/covers
@@ -17,7 +17,7 @@ exports.getCovers = asyncHandler( async (req, res, next) => {
 exports.getCover = asyncHandler( async( req, res, next) => {
   const cover = await Cover.findById(req.params.id);
   if(!cover){
-    next(new errorHandler(`Cover mail with id ${req.params.id} not found`), 404);
+    return next(new errorResponse(`Cover mail with id ${req.params.id} not found`), 404);
   }
   res.status(200).json(cover);
 });
@@ -44,7 +44,7 @@ exports.updateCover = asyncHandler( async( req, res, next) => {
   }); 
 
   if(!cover){
-    next(new errorHandler(`Cover mail with id ${req.params.id} not found`), 404);
+    return next(new errorResponse(`Cover mail with id ${req.params.id} not found`), 404);
   }
   res.status(200).json(cover);
 });
@@ -54,11 +54,11 @@ exports.updateCover = asyncHandler( async( req, res, next) => {
 // route DELETE /api/covers/:id
 // private only logged in user 
 exports.deleteCover = asyncHandler( async( req, res, next) => {
-  const cover = await Cover.findOneAndDelete(req.params.id);
+  const cover = await Cover.findByIdAndDelete(req.params.id);
 
   if(!cover){
-    next(new errorHandler(`Cover mail with id ${req.params.id} not found`), 404);
+    return next(new errorResponse(`Cover mail with id ${req.params.id} not found`), 404);
   }
 
-  res.status(200).json(cover);
+  res.status(200).json({data: {} });
 });
