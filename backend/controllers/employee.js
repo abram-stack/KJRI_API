@@ -4,9 +4,19 @@ const asyncHandler = require('../middleware/async');
 
 // @desc  get All the employees
 // route GET /api/employees/
-// private and auth only admin
+// route GET /api/projects/:projectId/employees
+// private and auth only tu admin
 exports.getEmployees = asyncHandler( async ( req, res, next )=> {
-  const employees = await Employee.find();
+  let query ;
+
+  // scene1 : using projectid routecheck if project exists then show employees, else if other route is hit
+  if(req.params.projectId){
+    query = Employee.find({ project: req.params.projectId });
+  } else{
+    query = Employee.find();
+  }
+
+  const employees = await query;
   res.status(200).json(employees);
 });
 

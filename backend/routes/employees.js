@@ -7,7 +7,9 @@ const {
   deleteEmployee
 } = require ('../controllers/employee')
 const {protect, authorize } = require ('../middleware/auth')
-const router = express.Router();
+
+// we merge url params
+const router = express.Router({mergeParams : true});
 
 router
   .route('/')

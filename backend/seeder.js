@@ -12,6 +12,7 @@ console.log(process.env.NODE_ENV);
 const Archive = require('./models/Archive');
 const User = require('./models/User');
 const Project = require('./models/Project');
+const Employee = require('./models/Employee');
 
 // connect to DB 
 mongoose.connect(process.env.MONGO_URI, {
@@ -25,6 +26,8 @@ mongoose.connect(process.env.MONGO_URI, {
 const archives = JSON.parse(fs.readFileSync(`${__dirname}/_data/archives.json`, 'utf-8'));
 const users = JSON.parse(fs.readFileSync(`${__dirname}/_data/users.json`, 'utf-8'));
 const projects = JSON.parse(fs.readFileSync(`${__dirname}/_data/projects.json`, 'utf-8'));
+const employees = JSON.parse(fs.readFileSync(`${__dirname}/_data/employees.json`, 'utf-8'));
+
 
 // import into DB 
 const importData = async () => {
@@ -32,6 +35,7 @@ const importData = async () => {
         await Archive.create(archives);
         await User.create(users);
         await Project.create(projects);
+        await Employee.create(employees);
         console.log('Data Imported...'.green.inverse);
         process.exit();
     } catch (err) {
@@ -45,6 +49,7 @@ const deleteData = async () => {
         await Archive.deleteMany();
         await User.deleteMany();
         await Project.deleteMany();
+        await Employee.deleteMany();
         console.log('Data Destroyed...'.red.inverse);
         process.exit();
     } catch (err) {

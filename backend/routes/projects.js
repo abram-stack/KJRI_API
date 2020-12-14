@@ -8,7 +8,14 @@ const {
 } = require ('../controllers/projects')
 
 const { protect, authorize } = require('../middleware/auth')
+
+// include other resources routers
+const employeeRouter = require('./employees');
+
 const router = express.Router();
+
+
+router.use('/:projectId/employees', employeeRouter);
 
 router
   .route('/')
