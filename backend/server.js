@@ -29,6 +29,8 @@ const regularRoute = require('./routes/regulars');
 const reportRoute = require('./routes/reports');
 const coverRoute = require('./routes/covers');
 const statementRoute = require('./routes/statements');
+const employeesRoute = require('./routes/employees');
+const projectRoute = require('./routes/projects');
 
 const app = express();
 app.use(cors());
@@ -59,6 +61,8 @@ app.use('/api/regulars',regularRoute);
 app.use('/api/reports', reportRoute);
 app.use('/api/covers', coverRoute);
 app.use('/api/statements', statementRoute);
+app.use('/api/employees', employeesRoute);
+app.use('/api/projects', projectRoute);
 
 app.use(errorHandler);
 app.use(cookieParser);
