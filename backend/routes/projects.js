@@ -16,6 +16,7 @@ const router = express.Router();
 
 
 router.use('/:projectId/employees', employeeRouter);
+router.use('/:projectId', employeeRouter);
 
 router
   .route('/')

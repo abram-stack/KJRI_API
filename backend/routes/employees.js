@@ -4,7 +4,8 @@ const {
   getEmployee,
   createEmployee,
   updateEmployee,
-  deleteEmployee
+  deleteEmployee,
+  addEmployee
 } = require ('../controllers/employee')
 const {protect, authorize } = require ('../middleware/auth')
 

@@ -30,7 +30,8 @@ exports.createProject = asyncHandler( async ( req, res, next ) => {
 
 
 // @desc update project
-// route PATCH/api/projects/:id
+// route PATCH /api/projects/:id
+// route PATCH /api/projects/
 exports.updateProject = asyncHandler ( async ( req, res, next) => {
   const project = await Project.findByIdAndUpdate(req.params.id, req.body, {
     new:true,
