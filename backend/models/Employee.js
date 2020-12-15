@@ -16,10 +16,12 @@ const employeeSchema = new mongoose.Schema({
   address: {
     type: String
   },
-  project: {
-    type: mongoose.Schema.ObjectId,
+  projects: [
+    {
+    type: mongoose.Schema.Types.ObjectId,
     ref: 'Project'
   }
+  ]
 });
 
 module.exports = mongoose.model('Employee', employeeSchema);

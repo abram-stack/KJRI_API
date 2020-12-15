@@ -13,7 +13,10 @@ exports.getEmployees = asyncHandler( async ( req, res, next )=> {
   if(req.params.projectId){
     query = Employee.find({ project: req.params.projectId });
   } else{
-    query = Employee.find();
+    query = Employee.find().populate({
+      path: 'project',
+      select: 'title desc'
+    });
   }
 
   const employees = await query;

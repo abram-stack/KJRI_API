@@ -2,17 +2,30 @@
     {
         "_id": "5fd7c1f3e0ecfb087a26b621",
         "title": "tugas1",
-        "description": "desc 1"
+        "description": "desc 1",
+        "employees" : [
+            "5fd66ce87ffed13e845915a9",
+            "5fd7c78b76716e0a3e8adcd3",
+            "5fd7c79b76716e0a3e8adcd4"
+        ]
     },
     {
         "_id": "5fd7c205e0ecfb087a26b622",
         "title": "tugas2",
-        "description": "desc 2"
+        "description": "desc 2",
+        "employees" : [
+            "5fd7c77e76716e0a3e8adcd2",
+            "5fd7c7a376716e0a3e8adcd5"
+        ]
     },
     {
         "_id": "5fd7c20ce0ecfb087a26b623",
         "title": "tugas3",
-        "description": "desc 3"
+        "description": "desc 3",
+        "employees": [
+            "5fd7c7b176716e0a3e8adcd6",
+            "5fd7c7bb76716e0a3e8adcd7"
+        ]
     },
     {
         "_id": "5fd7c212e0ecfb087a26b624",

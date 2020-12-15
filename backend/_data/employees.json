@@ -5,7 +5,7 @@
         "jabatan": "konsul",
         "pangkat": "4c",
         "address": "frankfurt",
-        "project" : "5fd7c1f3e0ecfb087a26b621"
+        "projects" : "5fd7c1f3e0ecfb087a26b621"
     },
     {
         "_id": "5fd7c77e76716e0a3e8adcd2",
@@ -13,7 +13,7 @@
         "jabatan": "konsul",
         "pangkat": "1b",
         "address": "frankfurt",
-        "project": "5fd7c205e0ecfb087a26b622"
+        "projects": "5fd7c205e0ecfb087a26b622"
     },
     {
         "_id": "5fd7c78b76716e0a3e8adcd3",
@@ -21,7 +21,7 @@
         "jabatan": "konsul",
         "pangkat": "3b",
         "address": "frankfurt",
-        "project" :"5fd7c1f3e0ecfb087a26b621"
+        "projects" :"5fd7c1f3e0ecfb087a26b621"
     },
     {
         "_id": "5fd7c79b76716e0a3e8adcd4",
@@ -29,7 +29,7 @@
         "jabatan": "protokol",
         "pangkat": "3b",
         "address": "frankfurt",
-        "project":"5fd7c1f3e0ecfb087a26b621"
+        "projects":"5fd7c1f3e0ecfb087a26b621"
     },
     {
         "_id": "5fd7c7a376716e0a3e8adcd5",
@@ -37,7 +37,7 @@
         "jabatan": "protokol",
         "pangkat": "3b",
         "address": "frankfurt",
-        "project": "5fd7c205e0ecfb087a26b622"
+        "projects": "5fd7c205e0ecfb087a26b622"
     },
     {
         "_id": "5fd7c7b176716e0a3e8adcd6",
@@ -45,7 +45,7 @@
         "jabatan": "protokol",
         "pangkat": "3b",
         "address": "frankfurt",
-        "project": "5fd7c20ce0ecfb087a26b623"
+        "projects": "5fd7c20ce0ecfb087a26b623"
     },
     {
         "_id": "5fd7c7bb76716e0a3e8adcd7",
@@ -53,6 +53,6 @@
         "jabatan": "protokol",
         "pangkat": "3b",
         "address": "frankfurt",
-        "project": "5fd7c20ce0ecfb087a26b623"
+        "projects": "5fd7c20ce0ecfb087a26b623"
     }
 ]
