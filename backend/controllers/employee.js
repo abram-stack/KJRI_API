@@ -57,11 +57,11 @@ exports.updateEmployee = asyncHandler ( async ( req, res, next ) => {
   
   // scenario 1: if theres projectId, then push
   if(req.params.projectId){
-    // query = Employee.findByIdAndUpdate(
-    //   req.params.id, 
-    //   {$push : {projects : req.params.projectId}},
-    //   {new: true, useFindAndModify: false}
-    //   );
+    query = Employee.findByIdAndUpdate(
+      req.params.id, 
+      {$push : {projects : req.params.projectId}},
+      {new: true, useFindAndModify: false}
+      );
     query2 = Project.findByIdAndUpdate(
       req.params.projectId,
       { $push: {employees : req.params.id}},
@@ -75,12 +75,12 @@ exports.updateEmployee = asyncHandler ( async ( req, res, next ) => {
       );
   }
   
-  // const employee = await query;
+  const employee = await query;
   const project = await query2;
 
-  // if(!employee){
-  //   return next(new errorResponse(`The employee with id ${req.params.id} not found`, 404));
-  // }
+  if(!employee){
+    return next(new errorResponse(`The employee with id ${req.params.id} not found`, 404));
+  }
   if(!project){
     return next(new errorResponse(`The project with id ${req.params.id} not found`, 404));
   }
