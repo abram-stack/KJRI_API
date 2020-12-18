@@ -61,7 +61,7 @@ exports.login = asyncHandler(async (req, res, next)=>{
 
 
 // @desc Get current logged in user
-// @route POST /api/auth/me
+// @route GET /api/auth/me
 // @access private
 exports.getMe = asyncHandler(async (req, res, next) => {
   const user = await User.findById(req.user.id);

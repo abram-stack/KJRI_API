@@ -87,6 +87,9 @@ exports.updateEmployee = asyncHandler ( async ( req, res, next ) => {
   res.status(200).json( project);
 });
 
+
+
+
 // @desc delete single employee
 // route DELETE /api/employees/:id
 // private and auth only admin
